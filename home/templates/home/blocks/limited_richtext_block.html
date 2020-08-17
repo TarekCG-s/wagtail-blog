@@ -1,8 +1,8 @@
-<div class="row">
-    <div class="col">
-      <h3>{{self.title}}</h3>
-      <p>{{self.body}}</p>
-      <a href="{{self.another_page.url}}" class="btn btn-primary">Page Link</a>
-      <a href="{{self.external_url}}" class="btn btn-primary">External link</a>
-    </div>
+<div class="jumbotron">
+  <h1 class="display-4">{{self.title}}</h1>
+  <p class="lead">{{ self.body }}</p>
+  <p class="lead">
+    <a href="{{self.another_page.url}}" class="btn btn-primary">Page Link</a>
+    <a href="{{self.external_url}}" class="btn btn-primary">External link</a>
+  </p>
 </div>
