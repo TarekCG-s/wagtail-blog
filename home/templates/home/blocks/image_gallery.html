@@ -1,0 +1,15 @@
+{% load wagtailimages_tags %}
+
+
+<div class="card-deck">
+    {% for item in self.images %}
+        {% image item.image width-300 as img %}
+        <div class="card">
+            <img class="card-img-top" src="{{ img.url }}" alt="">
+            <div class="card-body">
+              <p class="card-text">{{ item.description }}</p>
+            </div>
+          </div>
+    {% endfor %}
+</div>
+    
