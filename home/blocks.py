@@ -13,11 +13,11 @@ class LimitedRichTextBlock(blocks.StructBlock):
     def clean(self, value):
         errors = {}
 
-        if "the" in value.get("title"):
+        if " the " in value.get("title").lower():
             errors["title"] = ErrorList(['Your title must not include the word "the".'])
 
-        title_words = value.get("title").split()
-        if any(word in str(value.get("body")) for word in title_words):
+        title_words = value.get("title").lower().split()
+        if any(word in str(value.get("body")).lower() for word in title_words):
             errors["body"] = ErrorList(
                 ["Body should not include any words used in the title."]
             )
